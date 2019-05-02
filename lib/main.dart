@@ -120,7 +120,7 @@ class _MyAppState extends State<MyApp> {
     DOM.Document document = parse(response.body);
 
     // All Book titles on the page are bold so they're <b> elements
-    List<DOM.Element> titleElements = document.querySelectorAll('b]');
+    List<DOM.Element> titleElements = document.querySelectorAll('b');
 
     // First bold element is always "Quick Find Results:", remove it
     titleElements.removeAt(0);
@@ -132,6 +132,7 @@ class _MyAppState extends State<MyApp> {
     }
 
     String title = this.sanitizeBookTitle(this.bookTitle);
+
     if (titlesWithIDs.containsKey(title)) {
       String countsURL = 'https://readingcountsbookexpert.tgds.hmhco.com/bookexpert/detail_title.asp?UID=&subt=0';
       String id = titlesWithIDs[title];
@@ -146,10 +147,6 @@ class _MyAppState extends State<MyApp> {
       } finally {
         client.close();
       }
-
-      // POST to https://readingcountsbookexpert.tgds.hmhco.com/bookexpert/detail_title.asp?UID=&subt=0
-      // with form data tid: 850076
-      // as application/x-www-form-urlencoded
     } else {
       setState(() => this.rcPoints = "Not Found!");
     }
@@ -194,7 +191,6 @@ class _MyAppState extends State<MyApp> {
 
   // Use google books API to get json response about a book using its ISBN
   Future<Book> queryGoogleBooks(String isbn) async {
-
     String url = 'https://www.googleapis.com/books/v1/volumes?q=isbn:$isbn';
     print(url);
 
