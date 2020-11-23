@@ -18,3 +18,7 @@ returned HTML for the point value and return that back to the UI
 This is a pet project of mine and the first time I've had any experience with Flutter, Dart, or Android Studio / Android apps. I come from a
 javascript/typescript & Angular background and Dart seems very comparable to that. My initial impressions on Dart are good but it did seem
 like a lot of the plugins I was reading about seem to lack solid documentation, maybe there's something I am missing.
+
+### Building a release
+
+`flutter build appbundle --release --target-platform=android-arm64`
