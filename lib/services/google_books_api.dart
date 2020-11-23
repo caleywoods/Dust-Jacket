@@ -1,6 +1,7 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 import '../models/book.dart';
+import '../models/app_state.dart';
 
 class GoogleBooksAPI {
   // Use google books API to get json response about a book using its ISBN
@@ -15,7 +16,9 @@ class GoogleBooksAPI {
 
     if (response.statusCode == 200) {
       if (resp["totalItems"] == 0) {
-        throw Exception('No Results Found');
+        Book book = Book();
+        book.isbn = isbn;
+        AppState.change(book, false, true);
       } else {
         return Book.fromJson(resp);
       }

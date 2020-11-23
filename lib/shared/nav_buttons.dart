@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../models/app_state.dart';
+import '../models/book.dart';
 import '../services/services.dart';
 
 class NavButtons extends StatelessWidget {
@@ -37,14 +38,15 @@ class NavButtons extends StatelessWidget {
                               onPressed: () async {
                                 // @TODO - Make sure we handle errors from UPCScanner elegantly
                                 var isbn = await UPCScanner.scan();
+                                // Populate UI field for UPC
+                                // @TODO - Find a better way to handle isSearching/noSearchResults - don't like having to send empty book
+                                AppState.change(Book(), true, false);
                                 var book = await GoogleBooksAPI.query(isbn);
                                 var parser = DOMParser();
                                 var points = await parser.getBookPoints(book.authors[0], book.title);
                                 book.setPoints(points);
-                                AppState.change(book);
-                                // @CONDITION - GoogleBooksAPI Query
-                                //   - Success: Update the app state so the Author, Title, and hero cover show. Show spinner on points total
-                                //   - Failure:
+
+                                AppState.change(book, false, false);
                               },
                             )
                           ),
