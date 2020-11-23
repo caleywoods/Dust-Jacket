@@ -3,8 +3,9 @@ class Book {
   String title;
   String thumbnail;
   String points;
+  String isbn;
 
-  Book({this.authors, this.thumbnail, this.title, this.points});
+  Book({this.authors, this.thumbnail, this.title, this.points, this.isbn});
 
   factory Book.fromJson(Map<String, dynamic> json) {
     bool thumbnailMissing = json['items'][0]['volumeInfo']['imageLinks'] == null;
@@ -16,7 +17,8 @@ class Book {
     return Book(
       authors: json['items'][0]['volumeInfo']['authors'],
       thumbnail: thumbnailOrDefault,
-      title: json['items'][0]['volumeInfo']['title']
+      title: json['items'][0]['volumeInfo']['title'],
+      isbn: json['items'][0]['volumeInfo']['industryIdentifiers'][1]['identifier']
     );
   }
 
