@@ -17,6 +17,9 @@ class GoogleBooksAPI {
     if (response.statusCode == 200) {
       if (resp["totalItems"] == 0) {
         Book book = Book();
+        book.authors = [];
+        book.points = '';
+        book.title = '';
         book.isbn = isbn;
         AppState.change(book, false, true);
       } else {

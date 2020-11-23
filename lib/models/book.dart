@@ -13,12 +13,23 @@ class Book {
       ? 'https://i.imgur.com/OOhQueu.jpg'
       : json['items'][0]['volumeInfo']['imageLinks']['thumbnail'];
 
+    List identifiers = json['items'][0]['volumeInfo']['industryIdentifiers'];
+    String isbn = '';
+
+    if (identifiers.isNotEmpty) {
+      identifiers.forEach((entry) {
+        print(entry);
+        if (entry['identifier'] == 'ISBN_13') {
+          isbn = entry.identifier;
+        }
+      });
+    }
 
     return Book(
       authors: json['items'][0]['volumeInfo']['authors'],
       thumbnail: thumbnailOrDefault,
       title: json['items'][0]['volumeInfo']['title'],
-      isbn: json['items'][0]['volumeInfo']['industryIdentifiers'][1]['identifier']
+      isbn: isbn
     );
   }
 
