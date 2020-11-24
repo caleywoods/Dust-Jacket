@@ -1,7 +1,5 @@
-# Dust Jacket
+# ![dust jacket logo](https://i.imgur.com/WIVp68D.png | width=50) Dust Jacket
 ISBN Reading Counts point finder for Android
-
-![dust jacket logo](https://i.imgur.com/WIVp68D.png)
 
 ### What is Reading Counts?
 Many schools utilize the ["Reading Counts"](https://www.hmhco.com/programs/reading-counts) literacy program to help build reading comprehension for Elementary aged kids. Kids are typically given a monthly points quota to meet or exceed that increases with grade level.
@@ -18,9 +16,9 @@ This app is designed to save time for student and teacher alike. To retrieve the
 
 ### Examples
 
-![We're different, we're the same - worth 3 points screenshot](https://i.imgur.com/i5UNFg7.png)
-![I survived the shark attacks of 1916 - worth 5 points screenshot](https://i.imgur.com/JZKnQ80.png)
-![Catwad - worth 0 points screenshot](https://i.imgur.com/VX7uCJ5.png)
+![We're different, we're the same - worth 3 points screenshot](https://i.imgur.com/i5UNFg7.png =150x267)
+![I survived the shark attacks of 1916 - worth 5 points screenshot](https://i.imgur.com/JZKnQ80.png =150x267)
+![Catwad - worth 0 points screenshot](https://i.imgur.com/VX7uCJ5.png =150x267)
 
 ### Building a release
 
