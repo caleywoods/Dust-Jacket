@@ -18,9 +18,7 @@ This app is designed to save time for student and teacher alike. To retrieve the
 
 ### Examples
 
-<img src="https://i.imgur.com/i5UNFg7.png" width="150" height="267">
-<img src="https://i.imgur.com/JZKnQ80.png" width="150" height="267">
-<img src="https://i.imgur.com/VX7uCJ5.png" width="150" height="267">
+<img src="https://i.imgur.com/i5UNFg7.png" width="175" height="311"><img src="https://i.imgur.com/JZKnQ80.png" width="175" height="311"><img src="https://i.imgur.com/VX7uCJ5.png" width="175" height="311">
 
 ### Building a release
 
