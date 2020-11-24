@@ -1,7 +1,7 @@
 # Dust Jacket
 ISBN Reading Counts point finder for Android
 
-<img src="https://i.imgur.com/WIVp68D.png" width="50" height="50>
+<img src="https://i.imgur.com/WIVp68D.png" width="50" height="50">
 
 ### What is Reading Counts?
 Many schools utilize the ["Reading Counts"](https://www.hmhco.com/programs/reading-counts) literacy program to help build reading comprehension for Elementary aged kids. Kids are typically given a monthly points quota to meet or exceed that increases with grade level.
