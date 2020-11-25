@@ -61,21 +61,52 @@ class DOMParser {
   }
 
   sanitizeHTMLBookTitle(DOM.Element element) {
-    return element.innerHtml
+    String html = element.innerHtml;
+    html = html
         .replaceAll(' ', '')
         .replaceAll('!', '')
         .replaceAll('.', '')
         .replaceAll(',', '')
+        .replaceAll("'", '')
+        .replaceAll('-', '')
         .toLowerCase();
+
+    html = removeArticles(html, true);
+
+    return html;
   }
 
   sanitizeBookTitle(String title) {
-    return title
+    title = title
         .replaceAll(' ', '')
         .replaceAll('!', '')
         .replaceAll('.', '')
         .replaceAll(',', '')
+        .replaceAll("'", '')
+        .replaceAll('-', '')
         .toLowerCase();
+
+    title = removeArticles(title, false);
+
+    return title;
+  }
+
+  removeArticles(String input, bool trailing) {
+
+    if (trailing) {
+        bool titleEndsWithArticle = input.substring(input.length - 3) == 'the';
+        if (titleEndsWithArticle) {
+          // Remove "the" from the end, it messes up finding books
+          input = input.substring(0, input.length - 3);
+        }
+    } else {
+        bool titleStartsWithArticle = input.substring(0, 3) == 'the';
+        if (titleStartsWithArticle) {
+          // Remove "the" from the end, it messes up finding books
+          input = input.substring(3);
+        }
+    }
+    return input;
   }
 
   takeUniqueID(DOM.Element element) {
