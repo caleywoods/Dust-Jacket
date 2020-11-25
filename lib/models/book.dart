@@ -18,7 +18,6 @@ class Book {
 
     if (identifiers.isNotEmpty) {
       identifiers.forEach((entry) {
-        print(entry);
         if (entry['identifier'] == 'ISBN_13') {
           isbn = entry.identifier;
         }
